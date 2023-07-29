@@ -9,7 +9,7 @@ GIFinder is a React web application that allows users to search for GIFs using t
 2. Change into the project directory using `cd gifinder`.
 3. Install the required dependencies with `npm install`.
 4. Start the development server with `npm start`.
-5. Open [http://localhost:3000]{http://localhost:3000} in your web browser to access GIFinder.
+5. Open [http://localhost:3000](http://localhost:3000}) in your web browser to access GIFinder.
 6. Enter your search query in the provided input field and press `Enter` or click the search icon.
 7. The app will display GIFs related to your search query.
 8. Navigate through the pages using the pagination controls at the bottom of the page.
