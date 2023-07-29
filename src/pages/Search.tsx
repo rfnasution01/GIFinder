@@ -25,7 +25,7 @@ const SearchPage: React.FC<RouteProps> = ({ setRoute, route }) => {
   };
 
   // --- Debounce Search ---
-  const debouncedSearchQuery = useDebounce(searchQuery, 1000);
+  const debouncedSearchQuery = useDebounce(searchQuery, 10000);
 
   // --- Handle Search ---
   useEffect(() => {
