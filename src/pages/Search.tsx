@@ -37,8 +37,8 @@ const SearchPage: React.FC<RouteProps> = ({ setRoute, route }) => {
         const params = {
           api_key: apiKey,
           limit: 9,
-          q: searchQuery,
-          offset: 0,
+          q: debouncedSearchQuery,
+          offset: page,
         };
         const response = await getGifBySearch(params);
 
@@ -58,9 +58,11 @@ const SearchPage: React.FC<RouteProps> = ({ setRoute, route }) => {
       }
     };
 
+    // If there's a debouncedSearchQuery, start the searchGifs API call
     if (debouncedSearchQuery) {
       searchGifs();
     } else {
+      // If debouncedSearchQuery is empty, get the trending gifs
       const getTrendingGifs = async () => {
         setIsLoading(true);
 
@@ -90,7 +92,7 @@ const SearchPage: React.FC<RouteProps> = ({ setRoute, route }) => {
 
       getTrendingGifs();
     }
-  }, [apiKey, page, debouncedSearchQuery, searchQuery]);
+  }, [apiKey, page, debouncedSearchQuery]);
 
   return (
     <div>
